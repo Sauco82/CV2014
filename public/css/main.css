@@ -63,6 +63,10 @@ green: #89a02c;
 }
 
 /* ==============  Header   ============== */
+.header {
+    margin-top: 60px;
+}
+
 .header__menu {
     float: right;
 }
@@ -89,14 +93,20 @@ green: #89a02c;
     height: 220px;
 }
 
+.intro__img {
+    margin-top: -80px;
+}
+
 .intro__text {
     font-family: 'Lobster', cursive;
     color: white;
     width: 600px;
+    font-size: 30px;
 }
 
 .intro__text strong {
-    color: black;    
+    color: black;
+    font-weight: normal;    
 }
 
 /* ==============  Header   ============== */
@@ -114,8 +124,18 @@ green: #89a02c;
     }
 
 /* ==============  Sections   ============== */
-.frontend__section__img
-.frontend__section__description
+
+.section {
+    clear: both;
+}
+
+.section__img {
+    float: left;
+}
+.section__description {
+    float: right;
+    width: 600px;
+}
 
 /* ==========================================================================
    Helper classes
