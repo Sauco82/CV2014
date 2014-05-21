@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,33 +7,93 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">        
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div class="header">            
+            <ul class="header__menu horizontal-navigation">
+                <li><a href="#design">design</a></li>
+                <li><a href="#frontend">frontend</a></li>
+                <li><a href="#backend">backend</a></li>
+                <li><a href="#experience">experience</a></li>
+                <li><a href="#education">education</a></li>
+                <li><a href="#other">other</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="intro">
+            <img src="img/rafa.png" alt="Rafa">
+            <div class="intro__text">
+                <p>Hi-ho! This is me, <strong>Rafa</strong></p>
+                <p>I'm a <span class="strike">pirate</span> <strong>Frontend Developer</strong></p>
+                <p>and this is my <strong>CV</strong></p>
+            </div>
+        </div>
+
+        <ul class="highlights horizontal-list">
+            <li class="highlight">
+                <img src="img/frontend_black.png" alt="frontend">
+                <p>Extremely experienced in the <strong>Frontend</strong>, <a href="#frontend">read more...</a></p>
+            </li>
+            <li class="highlight">
+                <img src="img/design_black.png" alt="design">
+                <p>Knowledgeable about <strong>Design</strong> intrincacies, <a href="#design">read more...</a></p>
+            </li>
+            <li class="highlight">
+                <img src="img/backend_black.png" alt="backend">
+                <p>Seasoned with the <strong>Backend</strong>, <a href="#backend">read more...</a></p>
+            </li>
+        </ul>
+
+        <div id="skillset" class="skillset">
+            
+        </div>
+
+        <div id="frontend" class="frontend">
+            <div class="frontend__section"></div>
+            <div class="frontend__section"></div>
+        </div>
+
+        <div id="design" class="design">
+            <div class="design__section"></div>
+            <div class="design__section"></div>
+        </div>
+
+        <div id="backend" class="backend">
+            <div class="backend__section"></div>
+            <div class="backend__section"></div>
+        </div>
+
+        <div class="experience">
+            <h2>Experience</h2>
+            <ul class="companies">
+                <li class="company"></li>
+                <li class="company"></li>
+                <li class="company"></li>
+                <li class="company"></li>
+                <li class="company"></li>
+            </ul>
+        </div>
+
+        <div class="education">
+            <h2>Education</h2>
+        </div>
+
+        <div class="others">
+            <h2>Others</h2>
+        </div>
+
+        <div class="call-to-action">
+            <ul class="call-to-action__list horizontal-list">
+                
+            </ul>
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>        
+        <script src="js/main.js"></script>       
     </body>
 </html>
