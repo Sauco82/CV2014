@@ -96,7 +96,7 @@ green: #89a02c;
     font-family: 'Lobster', cursive;
     color: white;
     width: 600px;
-    font-size: 30px;
+    font-size: 37px;
 }
 
 .intro__text strong {
@@ -111,11 +111,11 @@ green: #89a02c;
 
 .highlight {
     width: 300px;
-    margin-right: 100px;
+    margin-left: 100px;
 }
 
     .highlight:first-child {
-        margin-right: 0;
+        margin-left: 0;
     }
 
 /* ==============  Sections   ============== */
@@ -164,7 +164,7 @@ green: #89a02c;
 }
 
 .horizontal-list li {
-    float: right;
+    float: left;
 }
 
 /*
