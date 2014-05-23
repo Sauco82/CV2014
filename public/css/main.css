@@ -49,7 +49,14 @@ red: #ec4835;
 green: #89a02c;
 ==============*/
 
+a {
+    color: #89a02c;
+    transition: color 0.3s;
+}
 
+a:hover {
+    color: #ec4835;
+}
 
 .header,
 .main-content {
@@ -111,12 +118,34 @@ green: #89a02c;
 
 .highlight {
     width: 300px;
+    height: 230px;
     margin-left: 100px;
+    position: relative;
 }
-
     .highlight:first-child {
         margin-left: 0;
     }
+
+.highlight--frontend {
+    background: url(../img/frontend_black.png) no-repeat 50% 0;
+}
+
+.highlight--design {
+    background: url(../img/design_black.png) no-repeat 50% 0;
+}
+
+.highlight--backend {
+    background: url(../img/backend_black.png) no-repeat 50% 0;
+}
+
+.highlight__text {
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+
 
 /* ==============  Sections   ============== */
 
