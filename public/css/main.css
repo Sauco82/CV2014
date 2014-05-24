@@ -397,6 +397,46 @@ a:hover {
    ========================================================================== */
 
 @media print {
+    .header,
+    .footer,
+    .highlights,
+    .section__img{
+        display: none;
+    }
+
+    .intro { 
+        background: none;
+        height: auto
+    }    
+    .intro__img { display: none }
+    .intro__text {
+        float:none;
+        color: #222;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .intro__text br {display: none;}
+
+    .frontend,
+    .design,
+    .backend,
+    .experience,
+    .education,
+    .others,
+    .intro,
+    .section {
+        margin-bottom: 0px; 
+    }
+
+    .section__description,
+    .education__sample  {
+        width: 90%;
+        margin: 0 auto;
+        float: none;
+    }
+
+
     * {
         background: transparent !important;
         box-shadow: none !important;
