@@ -131,9 +131,9 @@ a:hover {
 } 
  
 .highlight {
-    width: 300px;
+    width: 28%;
     height: 200px;
-    margin-left: 100px;
+    margin-left: 8%;    
     position: relative;
 }
     .highlight:first-child {
@@ -296,13 +296,68 @@ a:hover {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Media Queries 
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width: 1200px) {
+    html {
+        font-size: 1em; 
+    }
+
+    .header,
+    .main-content {
+        width: 700px;
+    }
+
+    .header {
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+        .header li { padding: 0 0 0 10px; }
+
+    .intro {
+        height: 160px;
+    }
+
+    .intro__img {
+        width: 256px;
+        margin-top: -50px;
+    }
+
+    .intro__text {
+        font-size: 25px;
+        width: 400px;
+    }
+        .intro__text br {display: none;}
+
+    .highlight {
+        height: 230px;
+    }
+        .highlight a {display: block}
+
+
+    .section__img,
+    .section__description {
+        margin: 10px auto;
+        float: none;
+        display: block;
+    }
+
+    .section__img {
+        width: auto;
+    }
+
+    .section__description {
+        width: 90%
+    }
+
+    .experience {
+        padding-top: 120px;
+        background: url(../img/experience2.png) 50% 0 no-repeat;
+        background-size: 100%
+    }
+        .experience img {display: none}
+    
 }
 
 /* ==========================================================================
