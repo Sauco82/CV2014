@@ -382,6 +382,7 @@ a:hover {
     .intro__img { display: none }
 
     .intro__text {
+        float:none;
         color: #222;
         width: 90%;
         margin: 0 auto;
