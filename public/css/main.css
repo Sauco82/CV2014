@@ -53,12 +53,14 @@ a:hover {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #ec4835;
+    color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #ec4835;
+    color: white;
     text-shadow: none;
 }
 
@@ -66,19 +68,25 @@ a:hover {
    Author's custom styles
    ========================================================================== */
 
-.header,
 .main-content {
     width: 1100px;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
 
 /* ==============  Header   ============== */
 .header {
-    margin-top: 40px;
+    min-height: 60px;    
+    width: 100%;
+    top: 0;    
+    position: fixed;    
+    background: white;
+    z-index: 2;
+    margin: 0;
 }
 
 .header__menu {
-    float: right;
+    position: absolute;
+    right: 20px;    
 }
 
 .header__menu__item {
@@ -102,12 +110,15 @@ a:hover {
 .intro {
     background: #89a02c;
     height: 220px;
+    margin-top: 60px; 
     margin-bottom: 100px;
-    position: relative;
+    position: relative;   
 }
 
 .intro__img {
     margin-top: -68px;
+    position: relative;   
+    z-index: 3; 
 }
 
 .intro__text {
@@ -306,16 +317,14 @@ a:hover {
         font-size: 1em; 
     }
 
-    .header,
     .main-content {
         width: 700px;
     }
 
     .header {
         font-size: 0.9em;
-        margin-top: 10px;
     }
-        .header li { padding: 0 0 0 10px; }
+        .header li { padding: 5px 0 0px 10px; }
 
     .intro {
         height: 160px;
@@ -372,6 +381,13 @@ a:hover {
     .header,
     .main-content {
         width: 100%;
+    }
+
+    .header {
+        padding-bottom: 10px;
+    }
+    .header__menu {
+        margin-top: 10px;
     }
 
     .intro { 
