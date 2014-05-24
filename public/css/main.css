@@ -184,6 +184,20 @@ a:hover {
     width: 600px;
 }
 
+.section__description,
+.section__img {
+    transition: 0.3s all;
+}
+
+.inactive .section__img {
+    margin-left: -100px;
+    opacity: 0;
+}
+.inactive .section__description {
+    margin-right: -100px;
+    opacity: 0;
+}
+
 /* =================== Specific sections =================================== */
 
 .frontend,
