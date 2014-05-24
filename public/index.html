@@ -36,7 +36,8 @@
         </div>
 
         <div class="main-content">
-            <ul class="highlights horizontal-list">
+
+            <ul class="highlights horizontal-list clearfix">
                 <li class="highlight highlight--frontend">                    
                     <p class="highlight__text">Extremely experienced <br> in the <strong>Frontend</strong>, <a href="#frontend">read more...</a></p>
                 </li>
@@ -53,7 +54,7 @@
             </div>
 
             <div id="frontend" class="frontend">
-                <div class="section">
+                <div class="section clearfix">
                     <img class="section__img" src="img/frontend.png" alt="frontend">
                     <div class="section__description">
                         <h3>Javascript</h3>
@@ -66,7 +67,7 @@
                         <p>Videogame programming is one of my hobbies and lately I have been exploring several HTML5/JS game engines and frameworks such as Phaser, ImpactJS or EaselJS; that has been quite useful to learn new ways of structuring the code and to note that they could be easily used as webapps development engines.</p>
                     </div>
                 </div>
-                <div class="section">
+                <div class="section clearfix">
                     <img class="section__img" src="img/html.png" alt="frontend">
                     <div class="section__description">
                         <h3>HTML <em>&</em> CSS</h3>
@@ -79,7 +80,7 @@
             </div>
 
             <div id="design" class="design">
-                <div class="section">
+                <div class="section clearfix">
                     <img class="section__img" src="img/design.png" alt="design">
                     <div class="section__description">
                         <h3>Design</h3>
@@ -102,98 +103,102 @@
             </div>
 
             <div id="backend" class="backend">
-                <div class="section">
+                <div class="section clearfix">
                     <img class="section__img" src="img/backend.png" alt="backend">
                     <div class="section__description">
-                        <h3>Rails</h3>
+                        <h3>Backend with RoR</h3>
                         <p>I started to get into web development as a Ruby on Rails developer, working mainly in creating custom CMS and internal webtooling to manage small organizations</p>
                         <p>At the very beggining I would use Rails with MySQL and the basic templating system to create my websites.</p>
                         <p>As time went by and I began to participate on bigger teams with Java backends I would use Rails to create APIs for my client side applications which would use Solar, MySQL and mainly another API as data origins</p>
                         <p>Influenced by the Ruby community I've started to do TDD several times, though sadly I've never gotten deep into it.</p>                       
                     </div>
                 </div>
-                <div class="section"></div>
             </div>
 
-            <div class="experience clearfix">
-                <h2>Experience</h2>
-                <div class="section">
+            <div class="experience">
+                <div class="section clearfix">
                     <img class="section__img" src="img/experience.png" alt="">
-                    <ul class="companies section__description">
-                        <li class="company">
-                            <h3 class="company__title">Senior Javascript Developer</h3>
-                            <h4 class="company__period">Qelp: December 2013 – Now</h4>
-                            <ul>
-                                <li>Designing and implementing diferent versions of the company widget that offers tutorials for several mobile devices</li>
-                                <li>Coding CoffeScript, SpineJS and Mustache to Improve the Core funcionality of the Widget</li>
-                                <li>Refactoring styling strategy to a more maintanable and customisable version</li>
-                                <li>Implementation of a mobile version of the plugin</li>
-                            </ul>
-                        </li>
-                        <li class="company">
-                            <h3 class="company__title">Frontend Developer and Interaction Designer</h3>
-                            <h4 class="company__period">Elmar Reizen: April 2012 – December 2013 (1 year 7 months)</h4>
-                            <ul>
-                                <li>Creating a customizable White Label travel website using Ruby on Rails and travel business API.</li>
-                                <li>Helping on defining the architecture of the travel business API.</li>
-                                <li>Transforming PSDs designs into HTML/CSS</li>
-                                <li>Analyzing & Designing Interactions and Behaviour of provided static designs.</li>
-                                <li>Code them using Jquery, AngularJS, Knockout and CSS3 animations.</li>
-                                <li>Defining the transition from Java Seam to Ruby on Rails of the official websites of the company.</li>
-                                <li>Adding new features in Seam to the official websites of the company</li>
-                            </ul>                        
-                        </li>
-                        <li class="company">
-                            <h3 class="company__title">Sysadmin & All round developer</h3>
-                            <h4 class="company__period">Junta de Andalucía: April 2010 – April 2012 (2 years)</h4>
-                            <ul>
-                                <li>Maintenance of the systems of a public building</li>
-                                <li>Development quality management internal web application with heavy use of SVG charts.</li>
-                            </ul>                        
-                            
-                        </li>
-                        <li class="company">
-                            <h3 class="company__title">All round developer</h3>
-                            <h4 class="company__period">Jaén de Medios: January 2009 – April 2012 (3 years 4 months)</h4>
-                            <ul>
-                                <li>Created several websites with custom management tools and CMS like</li>
-                                <li>Web & print Design, usability consultancy</li>
-                            </ul>
-                        </li>
-                        <li class="company">
-                            <h3 class="company__title">All Round Developer, Teacher</h3>
-                            <h4 class="company__period">Objetivo Vida: October 2006 – April 2010 (3 years 7 months)</h4>
-                            
-                            <ul>
-                                <li>Information Technologies teaching for low educated excluded people</li>
-                                <li>Development of my first CMS and management tool http://objetivovida.org/</li>
-                            </ul>                        
-                        </li>
-                    </ul>    
+                    
+                    <div class="section__description">
+                        <h2 class="experience__title">Experience</h2>
+                        <ul class="companies">
+                            <li class="company">
+                                <h3 class="company__title">Senior Javascript Developer</h3>
+                                <h4 class="company__period">Qelp: December 2013 – Now</h4>
+                                <ul class="company__tasks">
+                                    <li>Designing and implementing diferent versions of the company widget that offers tutorials for several mobile devices</li>
+                                    <li>Coding CoffeScript, SpineJS and Mustache to Improve the Core funcionality of the Widget</li>
+                                    <li>Refactoring styling strategy to a more maintanable and customisable version</li>
+                                    <li>Implementation of a mobile version of the plugin</li>
+                                </ul>
+                            </li>
+                            <li class="company">
+                                <h3 class="company__title">Frontend Developer and Interaction Designer</h3>
+                                <h4 class="company__period">Elmar Reizen: April 2012 – December 2013 (1 year 7 months)</h4>
+                                <ul class="company__tasks">
+                                    <li>Creating a customizable White Label travel website using Ruby on Rails and travel business API.</li>
+                                    <li>Helping on defining the architecture of the travel business API.</li>
+                                    <li>Transforming PSDs designs into HTML/CSS</li>
+                                    <li>Analyzing & Designing Interactions and Behaviour of provided static designs.</li>
+                                    <li>Code them using Jquery, AngularJS, Knockout and CSS3 animations.</li>
+                                    <li>Defining the transition from Java Seam to Ruby on Rails of the official websites of the company.</li>
+                                    <li>Adding new features in Seam to the official websites of the company</li>
+                                </ul>                        
+                            </li>
+                            <li class="company">
+                                <h3 class="company__title">Sysadmin & All round developer</h3>
+                                <h4 class="company__period">Junta de Andalucía: April 2010 – April 2012 (2 years)</h4>
+                                <ul class="company__tasks">
+                                    <li>Maintenance of the systems of a public building</li>
+                                    <li>Development quality management internal web application with heavy use of SVG charts.</li>
+                                </ul>                        
+                                
+                            </li>
+                            <li class="company">
+                                <h3 class="company__title">All round developer</h3>
+                                <h4 class="company__period">Jaén de Medios: January 2009 – April 2012 (3 years 4 months)</h4>
+                                <ul class="company__tasks">
+                                    <li>Created several websites with custom management tools and CMS like</li>
+                                    <li>Web & print Design, usability consultancy</li>
+                                </ul>
+                            </li>
+                            <li class="company">
+                                <h3 class="company__title">All Round Developer, Teacher</h3>
+                                <h4 class="company__period">Objetivo Vida: October 2006 – April 2010 (3 years 7 months)</h4>
+                                
+                                <ul class="company__tasks">
+                                    <li>Information Technologies teaching for low educated excluded people</li>
+                                    <li>Development of my first CMS and management tool http://objetivovida.org/</li>
+                                </ul>                        
+                            </li>
+                        </ul>        
+                    </div>
+                    
                 </div>
                 
             </div>
 
             <div class="education">
-                <div class="section">
+                <div class="section clearfix">
                     <img src="img/education.png" alt="" class="section__img">
                     <div class="section__description">
                         <h2>Education</h2>
                         <p><strong>University of Jaén.</strong> Computer Engineer. Finished at 2006</p>
-                        <p>I keep on continuously reading books and articles in order to keep myself up to date and get more skills.</p>
-                        <p>Some of them as a sample:</p>
-                        <ul>
-                            <li>Javascript: Javascript: The Good Parts, Javascript Patterns, Maintainable Javascript, Jquery from Novice to Ninja, AngularJS ...</li>
-                            <li>Interaction/Gaming: HTML5 Canvas, Canvas the Pocket Guide, HTML5 Games, HTML5 Animation with Javascript...</li>
-                            <li>Design/UX: The Smashing Book (1/3), The Mobile Book, Numbers in Graphic Design, History of Typography, Don't Make me Think, Inkscape Logo a Logo...</li>
-                            <li>Ruby/Rails: Agile Web Development with Rails (1 to 3), Poignant Guide to Ruby, Programming Ruby 1.8, 1.9...</li>
-                        </ul>
+                        <p>I keep on continuously reading books and articles in order to keep myself up to date and get new skills.</p>
+                        <p><strong>Languages:</strong> Fluent English, Native Spanish </p>                        
                     </div>
                 </div>
+                <h4>Some of them as a sample:</h4>
+                <ul>
+                    <li>Javascript: Javascript: The Good Parts, Javascript Patterns, Maintainable Javascript, Jquery from Novice to Ninja, AngularJS ...</li>
+                    <li>Interaction/Gaming: HTML5 Canvas, Canvas the Pocket Guide, HTML5 Games, HTML5 Animation with Javascript...</li>
+                    <li>Design/UX: The Smashing Book (1/3), The Mobile Book, Numbers in Graphic Design, History of Typography, Don't Make me Think, Inkscape Logo a Logo...</li>
+                    <li>Ruby/Rails: Agile Web Development with Rails (1 to 3), Poignant Guide to Ruby, Programming Ruby 1.8, 1.9...</li>
+                </ul>
 
             </div>
 
-            <div class="others section">
+            <div class="others section clearfix">
                 
                 <img src="img/others.png" alt="" class="section__img">
 
@@ -203,30 +208,37 @@
                     things as solving or minimizing problems in the Backend by using some interaction technique in the
                     Frontend.</p>
 
-                    <p>Drawing has been my hobby since I was a child, and I always like to have a pencil, an eraser and paper at hand, I'm able to make pretty decent drawings and I'm really efficient creating mocks on paper or a whiteboard.</p>
-
-                    <h4>Languages</h4>
-                    <p>Fluent English</p>
-                    <p>Native Spanish</p>
+                    <p>Drawing has been my hobby since I was a child, and I always like to have a pencil, an eraser and paper at hand, I'm able to make pretty decent drawings and I'm really efficient creating mocks on paper or a whiteboard.</p>                    
                 </div>
 
-            </div>
+            </div>            
+    
+        </div>
 
-            <div class="call-to-action section">
-                <ul class="call-to-action__list horizontal-list">
-                    <li> 
-                        Check the Source
+        <div class="footer">
+            <div class="main-content">
+                <h2 class="footer__header">...and now, make your call</h2>
+                <ul class="horizontal-list clearfix">
+                    <li class="footer__item"> 
+                        <a class="footer__link" href="https://github.com/Sauco82/CV2014">
+                            <p class="icon-github-alt footer__icon"></p>
+                            <p class="footer__text">Check the Source</p>
+                        </a>
                     </li>
-                    <li>
-                        Print the CV
+                    <li class="footer__item">
+                        <a class="footer__link" href="javascript:window.print()" >
+                            <p class="icon-print2 footer__icon"></p>
+                            <p class="footer__text">Print the CV</p>
+                        </a>
                     </li>
-                    <li>
-                        Get In touch
+                    <li class="footer__item">
+                        <a class="footer__link" href="mailto:sauco82@gmail.com?Subject=Hey%20Rafa!">
+                            <p class="icon-envelope-o footer__icon"></p>
+                            <p class="footer__text">Get In touch</p>
+                        </a>
                     </li>
                 </ul>
             </div>
-
-    
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
