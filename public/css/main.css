@@ -461,6 +461,7 @@ a:hover {
         margin: 0 auto;
     }
 
+    .skillset,
     .highlights { display: none }
 }
 
@@ -473,13 +474,15 @@ a:hover {
     .header,
     .footer,
     .highlights,
+    .skillset,
     .section__img{
         display: none;
     }
 
     .intro { 
         background: none;
-        height: auto
+        height: auto;
+        margin:0;
     }    
     .intro__img { display: none }
     .intro__text {
@@ -491,6 +494,20 @@ a:hover {
 
     .intro__text br {display: none;}
 
+    h3 {margin: 0}
+
+    .main-content,
+    .section__description {
+        width: 90%;
+        margin: 0;
+    }
+
+
+    .education__sample  {
+        width: 81%;
+        margin: 0 auto;
+    }
+
     .frontend,
     .design,
     .backend,
@@ -501,14 +518,6 @@ a:hover {
     .section {
         margin-bottom: 0px; 
     }
-
-    .section__description,
-    .education__sample  {
-        width: 90%;
-        margin: 0 auto;
-        float: none;
-    }
-
 
     * {
         background: transparent !important;

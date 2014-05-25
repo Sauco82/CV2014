@@ -125,9 +125,9 @@ function animateSections() {
 function animateNavigation() {	
 	$('a').click(function() {
 		var destination = $(this).attr('href');
-		event.preventDefault();
 
 		if ( destination && destination[0] == "#" ) {
+			event.preventDefault();
 			scrollTo(destination)
 		}
 	});
@@ -146,13 +146,13 @@ function scrollTo(id) {
 
 var skillset = {
 	general: [
-		{ name: "javascript", key: "javascript" , value: 9500 },
-		{ name: "html", key: "html" , value: 9500 },
-		{ name: "backend", key: "backend" , value: 4000 },
-		{ name: "design", key: "design" , value: 6000 },
-		{ name: "usability", key: "usability" , value: 2000 }
+		{ name: "javascript", key: "javascript_skills" , value: 9500 },
+		{ name: "html", key: "html_skills" , value: 9500 },
+		{ name: "backend", key: "backend_skills" , value: 4000 },
+		{ name: "design", key: "design_skills" , value: 6000 },
+		{ name: "usability", key: "usability_skills" , value: 2000 }
 	],
-	javascript: [
+	javascript_skills: [
 		{ name:"Vainilla" , value: 9500 }, //It's over 9000!
 		{ name:"Jquery" , value: 9000 },
 		{ name:"Coffescript" , value: 6500 },
@@ -163,7 +163,7 @@ var skillset = {
 		{ name:"Spinejs" , value: 5000 },
 		{ name:"Game engines" , value: 2500 }
 	],
-	html: [
+	html_skills: [
 		{ name: "css", value: 9500 },
 		{ name: "html", value: 9500 },
 		{ name: "smacss", value: 8000 },
@@ -171,7 +171,7 @@ var skillset = {
 		{ name: "scss", value: 9000 },
 		{ name: "architecture", value: 9000 }
 	],
-	backend: [
+	backend_skills: [
 		{ name: "rails", value: 5000 },
 		{ name: "mysql", value: 3000 },		
 		{ name: "tdd", value: 2000 },
@@ -179,7 +179,7 @@ var skillset = {
 		{ name: "architecture", value: 5000 },
 		{ name: "apidevelopment", value: 6000 }
 	],
-	design: [
+	design_skills: [
 		{ name: "colortheory" , value: 6000 },
 		{ name: "layout" , value: 5000 },
 		{ name: "typography" , value: 4000 },
@@ -190,7 +190,7 @@ var skillset = {
 		{ name: "photoshop" , value: 2000 },
 		{ name: "illustrator" , value: 2000 },
 	],
-	usability: [
+	usability_skills: [
 		{ name: "ux" , value: 2000 },
 		{ name: "gamification" , value: 2500 },
 		{ name: "psychology" , value: 1000 },
