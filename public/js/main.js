@@ -10,14 +10,14 @@ var skillset = {
 		{ name:"Spinejs" , value: 5000 },
 		{ name:"Game engines" , value: 2500 }
 	],
-	html: {
-		css: 9500,
-		html: 9500,
-		smacss: 8000,
-		less: 9000,
-		scss: 9000,
-		architecture: 9000
-	},
+	html: [
+		{ name: "css", value: 9500 },
+		{ name: "html", value: 9500 },
+		{ name: "smacss", value: 8000 },
+		{ name: "less", value: 9000 },
+		{ name: "scss", value: 9000 },
+		{ name: "architecture", value: 9000 }
+	],
 	backend: {
 		rails: 5000,
 		mysql: 3000,		
@@ -58,72 +58,63 @@ $(function(){
 	
 });
 
-function skillsetChart(skills) {
-	var width = $('#skillset').width(),
-		height = $('#skillset').height();
+function skillsetChart(skills) {	
+	d3.select("#skillset g").remove() //remove any previous charts
 
-	var scale = d3.scale.linear()
+	var margin = {top: 30, left:50, right: 10},
+		width = $('#skillset').width() - margin.left - margin.right,
+		height = $('#skillset').height() - margin.top*2;
+
+	var barHeight = d3.scale.linear()
 					.range([height, 0])
 					.domain([0, 10000]);
 
-	// var barWidth = ( width / skills.length ) / 2;
 	var barWidth = d3.scale.ordinal()
 						.domain(skills.map(function(s){return s.name}))
-						.rangeRoundBands([0,width],0.3);
+						.rangeRoundBands([0,width],0.5);
 
-	var chart = d3.select("#skillset");
+	var xAxis = d3.svg.axis()
+					.scale(barWidth)
+					.orient("bottom");
 
+	var yAxis = d3.svg.axis()
+					.scale(barHeight)
+					.orient("left");	
+
+	// Chart
+	var chart = d3.select("#skillset")
+					.append("g")
+					.attr("transform", "translate(" + margin.left + "," + margin.top + ")" );
+
+	// X axis
+	chart.append("g")
+			.attr("class", "x axis")
+			.attr("transform", "translate(0," + height + ")")
+			.call(xAxis);
+
+	// Y axis
+	chart.append("g")
+			.attr("class", "y axis")
+			.call(yAxis);
+
+	// Bar containers
 	var bar = chart.selectAll("g")
 					.data(skills)
 				.enter().append("g")
 					.attr("transform", function(s, i) { return "translate(" + barWidth(s.name)  + ",0)"; });
 
-	bar.append("rect")
-		.attr("y", function(d) { return scale(d.value); })
-		.attr("height", function(d) { return height - scale(d.value); })
-		.classed("skillset__bar", true)
-		.attr("width", barWidth.rangeBand() );
-
-	bar.append("text")
-		.attr("x", barWidth.rangeBand() / 2)
-		.attr("y", function(d) { return scale(d.value) + 3; })
-		.attr("dy", ".75em")
-		.text(function(d) { return d.name; });
-
-	// d3.select("#skillset")
-	//   .selectAll("div")
-	//   	.data(data)
-	//   .enter().append("div")
- //    	.style("width", function(d) { return scale(d.value) + "px"; })
- //    	.classed("skillset__bar", true)
- //    	.text(function(d) { return d.name + ": " + d.value; });
+	// Bar rectangles	
+	chart.selectAll(".skillset__bar")
+			.data(skills)
+		.enter().append("rect")
+			.attr("class", "skillset__bar")
+			.attr("x", function(s) { return barWidth(s.name); })
+			.attr("y", function(s) { return barHeight(s.value); })
+			.attr("height", function(s) { return height - barHeight(s.value); })
+			.attr("width", barWidth.rangeBand());
 	  
 }
 
-/*
-d3.tsv("data.tsv", type, function(error, data) {
-  y.domain([0, d3.max(data, function(d) { return d.value; })]);
-
-  var barWidth = width / data.length;
-
-  var bar = chart.selectAll("g")
-      .data(data)
-    .enter().append("g")
-      .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
-
-  bar.append("rect")
-      .attr("y", function(d) { return y(d.value); })
-      .attr("height", function(d) { return height - y(d.value); })
-      .attr("width", barWidth - 1);
-
-  bar.append("text")
-      .attr("x", barWidth / 2)
-      .attr("y", function(d) { return y(d.value) + 3; })
-      .attr("dy", ".75em")
-      .text(function(d) { return d.value; });
-});
-
-*/
 
 function animateSections() {
 	var sections = $('.section'),

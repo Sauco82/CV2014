@@ -188,6 +188,20 @@ a:hover {
 }
     .skillset__bar:hover { fill: #ec4835 }
 
+.axis text {
+  font: 10px sans-serif;
+}
+
+.x.axis text {
+    font-size: 12px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
 
 
 
