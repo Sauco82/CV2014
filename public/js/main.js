@@ -63,25 +63,29 @@ function skillsetChart(skills) {
 		height = $('#skillset').height();
 
 	var scale = d3.scale.linear()
-					.range([0, height])
+					.range([height, 0])
 					.domain([0, 10000]);
 
-	var barWidth = width / skills.length;
+	// var barWidth = ( width / skills.length ) / 2;
+	var barWidth = d3.scale.ordinal()
+						.domain(skills.map(function(s){return s.name}))
+						.rangeRoundBands([0,width],0.3);
 
 	var chart = d3.select("#skillset");
 
-	var bar = chart.selectAll("g").data(skills)
-					.enter().append("g")
-					.attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+	var bar = chart.selectAll("g")
+					.data(skills)
+				.enter().append("g")
+					.attr("transform", function(s, i) { return "translate(" + barWidth(s.name)  + ",0)"; });
 
 	bar.append("rect")
 		.attr("y", function(d) { return scale(d.value); })
-		.attr("height", function(d) { console.log(height,d.value,scale(d.value)); return height - scale(d.value); })
+		.attr("height", function(d) { return height - scale(d.value); })
 		.classed("skillset__bar", true)
-		.attr("width", barWidth - 1);
+		.attr("width", barWidth.rangeBand() );
 
 	bar.append("text")
-		.attr("x", barWidth / 2)
+		.attr("x", barWidth.rangeBand() / 2)
 		.attr("y", function(d) { return scale(d.value) + 3; })
 		.attr("dy", ".75em")
 		.text(function(d) { return d.name; });
