@@ -108,10 +108,15 @@ function skillsetChart(skills) {
 			.data(skills)
 		.enter().append("rect")
 			.attr("class", "skillset__bar")
-			.attr("x", function(s) { return barWidth(s.name); })
-			.attr("y", function(s) { return barHeight(s.value); })
+			.attr("x", function(s) { return barWidth(s.name); })			
+			.attr("width", barWidth.rangeBand())			
+			.attr("y", height)
+			.attr("height", 0	)
+			.transition()
+			.delay(750)
+			.duration(750)
 			.attr("height", function(s) { return height - barHeight(s.value); })
-			.attr("width", barWidth.rangeBand());
+			.attr("y", function(s) { return barHeight(s.value); });
 	
 	chart.append("g")
 			.attr("class", "y axis")
@@ -127,7 +132,7 @@ function skillsetChart(skills) {
 
 function animateSections() {
 	var sections = $('.section'),
-		middleOfTheScreen = $(window).height()/2;
+		middleOfTheScreen = $(window).height()/2 +100; //well, almost the middle
 
 	sections.addClass('inactive');
 
