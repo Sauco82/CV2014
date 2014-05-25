@@ -181,11 +181,11 @@ a:hover {
 }
 
 .skillset__bar {
-    background: #89a02c;
+    fill: #89a02c;
     cursor:pointer;
-    transition: 0.3s background;
+    transition: 0.3s fill;
 }
-    .skillset__bar:hover { background: #ec4835 }
+    .skillset__bar:hover { fill: #ec4835 }
 
 
 

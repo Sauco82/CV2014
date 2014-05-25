@@ -51,31 +51,75 @@ var skillset = {
 $(function(){
 	
 	animateNavigation();
-	skillsetChart();
+	skillsetChart(skillset.javascript);
 	if ($(window).width() >= 700) {
 		animateSections();
 	}
 	
 });
 
-function skillsetChart() {
+function skillsetChart(skills) {
 	var width = $('#skillset').width(),
 		height = $('#skillset').height();
 
 	var scale = d3.scale.linear()
-				.range([0, width])
-				.domain([0, d3.max(skillset.javascript, function(s) {return s.value} )]);
+					.range([0, height])
+					.domain([0, 10000]);
 
+	var barWidth = width / skills.length;
 
-	d3.select("#skillset")
-	  .selectAll("div")
-	  	.data(skillset.javascript)
-	  .enter().append("div")
-    	.style("width", function(d) { return scale(d.value) + "px"; })
-    	.classed("skillset__bar", true)
-    	.text(function(d) { return d.name + ": " + d.value; });
+	var chart = d3.select("#skillset");
+
+	var bar = chart.selectAll("g").data(skills)
+					.enter().append("g")
+					.attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+
+	bar.append("rect")
+		.attr("y", function(d) { return scale(d.value); })
+		.attr("height", function(d) { console.log(height,d.value,scale(d.value)); return height - scale(d.value); })
+		.classed("skillset__bar", true)
+		.attr("width", barWidth - 1);
+
+	bar.append("text")
+		.attr("x", barWidth / 2)
+		.attr("y", function(d) { return scale(d.value) + 3; })
+		.attr("dy", ".75em")
+		.text(function(d) { return d.name; });
+
+	// d3.select("#skillset")
+	//   .selectAll("div")
+	//   	.data(data)
+	//   .enter().append("div")
+ //    	.style("width", function(d) { return scale(d.value) + "px"; })
+ //    	.classed("skillset__bar", true)
+ //    	.text(function(d) { return d.name + ": " + d.value; });
 	  
 }
+
+/*
+d3.tsv("data.tsv", type, function(error, data) {
+  y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+  var barWidth = width / data.length;
+
+  var bar = chart.selectAll("g")
+      .data(data)
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+
+  bar.append("rect")
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); })
+      .attr("width", barWidth - 1);
+
+  bar.append("text")
+      .attr("x", barWidth / 2)
+      .attr("y", function(d) { return y(d.value) + 3; })
+      .attr("dy", ".75em")
+      .text(function(d) { return d.value; });
+});
+
+*/
 
 function animateSections() {
 	var sections = $('.section'),
