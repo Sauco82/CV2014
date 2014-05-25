@@ -1,62 +1,31 @@
-var skillset = {
-	javascript: [
-		{ name:"Vainilla" , value: 9500 }, //It's over 9000!
-		{ name:"Jquery" , value: 9000 },
-		{ name:"Coffescript" , value: 6500 },
-		{ name:"Angular" , value: 7000 },
-		{ name:"Knockout" , value: 5500 },
-		{ name:"Architecture" , value: 7000 },
-		{ name:"Yeoman" , value: 2500 },
-		{ name:"Spinejs" , value: 5000 },
-		{ name:"Game engines" , value: 2500 }
-	],
-	html: [
-		{ name: "css", value: 9500 },
-		{ name: "html", value: 9500 },
-		{ name: "smacss", value: 8000 },
-		{ name: "less", value: 9000 },
-		{ name: "scss", value: 9000 },
-		{ name: "architecture", value: 9000 }
-	],
-	backend: {
-		rails: 5000,
-		mysql: 3000,		
-		tdd: 2000,
-		nodejs: 2500,
-		architecture: 5000,
-		apidevelopment: 6000
-	},
-	design: {
-		colortheory: 7000,
-		layout: 6000,
-		typography: 5000,
-		wireframing: 7000,
-		drawing: 7000,
-		inkscape: 9500,
-		gimp: 6500,
-		photoshop: 2000,
-		illustrator: 2000,
-	},
-	usability: {
-		ux: 2000,
-		gamification: 2500,
-		psychology: 1000,
-		affordance: 1000,
-		learnability: 2000
-	}
-}
-
-
 // CV Initilization
 $(function(){
 	
 	animateNavigation();
-	skillsetChart(skillset.javascript);
+
 	if ($(window).width() >= 700) {
+		skillsetChart(skillset.general);
+		changeSkillSet();
 		animateSections();
 	}
 	
 });
+
+function changeSkillSet() {
+	$("#skillset").on('click', 'rect',function() {		
+		var selected = $(this).attr('id');
+
+		if ( selected ) {
+			$("#skillset__back").show();
+			skillsetChart(skillset[selected]);
+		}
+	});
+
+	$("#skillset__back").on('click', function() {
+		skillsetChart(skillset.general);
+		$("#skillset__back").hide();
+	});
+}
 
 function skillsetChart(skills) {	
 	d3.select("#skillset g").remove() //remove any previous charts
@@ -103,21 +72,24 @@ function skillsetChart(skills) {
 				.enter().append("g")
 					.attr("transform", function(s, i) { return "translate(" + barWidth(s.name)  + ",0)"; });
 
+
 	// Bar rectangles	
 	chart.selectAll(".skillset__bar")
 			.data(skills)
 		.enter().append("rect")
 			.attr("class", "skillset__bar")
+			.attr("id", function(s) { return s.key } ) //only general classes have a key
 			.attr("x", function(s) { return barWidth(s.name); })			
 			.attr("width", barWidth.rangeBand())			
 			.attr("y", height)
 			.attr("height", 0	)
 			.transition()
-			.delay(750)
+			.delay(150)
 			.duration(750)
 			.attr("height", function(s) { return height - barHeight(s.value); })
 			.attr("y", function(s) { return barHeight(s.value); });
 	
+	// Legend
 	chart.append("g")
 			.attr("class", "y axis")
 		.call(yAxis)
@@ -152,7 +124,7 @@ function animateSections() {
 
 function animateNavigation() {	
 	$('a').click(function() {
-		var destination = this.getAttribute('href');
+		var destination = $(this).attr('href');
 		event.preventDefault();
 
 		if ( destination && destination[0] == "#" ) {
@@ -169,4 +141,60 @@ function scrollTo(id) {
 	$('html, body').animate({
 	    scrollTop: scroll
 	 }, 600);	
+}
+
+
+var skillset = {
+	general: [
+		{ name: "javascript", key: "javascript" , value: 9500 },
+		{ name: "html", key: "html" , value: 9500 },
+		{ name: "backend", key: "backend" , value: 4000 },
+		{ name: "design", key: "design" , value: 6000 },
+		{ name: "usability", key: "usability" , value: 2000 }
+	],
+	javascript: [
+		{ name:"Vainilla" , value: 9500 }, //It's over 9000!
+		{ name:"Jquery" , value: 9000 },
+		{ name:"Coffescript" , value: 6500 },
+		{ name:"Angular" , value: 7000 },
+		{ name:"Knockout" , value: 5500 },
+		{ name:"Architecture" , value: 7000 },
+		{ name:"Yeoman" , value: 2500 },
+		{ name:"Spinejs" , value: 5000 },
+		{ name:"Game engines" , value: 2500 }
+	],
+	html: [
+		{ name: "css", value: 9500 },
+		{ name: "html", value: 9500 },
+		{ name: "smacss", value: 8000 },
+		{ name: "less", value: 9000 },
+		{ name: "scss", value: 9000 },
+		{ name: "architecture", value: 9000 }
+	],
+	backend: [
+		{ name: "rails", value: 5000 },
+		{ name: "mysql", value: 3000 },		
+		{ name: "tdd", value: 2000 },
+		{ name: "nodejs", value: 2500 },
+		{ name: "architecture", value: 5000 },
+		{ name: "apidevelopment", value: 6000 }
+	],
+	design: [
+		{ name: "colortheory" , value: 6000 },
+		{ name: "layout" , value: 5000 },
+		{ name: "typography" , value: 4000 },
+		{ name: "wireframing" , value: 7000 },
+		{ name: "drawing" , value: 7000 },
+		{ name: "inkscape" , value: 9500 },
+		{ name: "gimp" , value: 6500 },
+		{ name: "photoshop" , value: 2000 },
+		{ name: "illustrator" , value: 2000 },
+	],
+	usability: [
+		{ name: "ux" , value: 2000 },
+		{ name: "gamification" , value: 2500 },
+		{ name: "psychology" , value: 1000 },
+		{ name: "affordance" , value: 1000 },
+		{ name: "learnability" , value: 2000 }
+	]
 }
