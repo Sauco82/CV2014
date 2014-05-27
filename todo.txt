@@ -1,0 +1,13 @@
+- change icons to neutral version
+
+- pie chart for main skills, bar chart for subskills
+
+- gray/white/green/red layout
+
+- use angular directives for d3
+
+- tag skills
+
+- showcase screenshots and links to works
+
+- dinamic svg images
