@@ -104,7 +104,7 @@ function skillsetChart(skills) {
 
 function animateSections() {
 	var sections = $('.section'),
-		middleOfTheScreen = $(window).height()/2 +100; //well, almost the middle
+		positionTrigger = $(window).height()*0.7;
 
 	sections.addClass('inactive');
 
@@ -112,7 +112,7 @@ function animateSections() {
 
 		if ( sections.length ) {
 			sections.each(function(){			
-				if ( $(window).scrollTop() > ($(this).offset().top - middleOfTheScreen) ) {
+				if ( $(window).scrollTop() > ($(this).offset().top - positionTrigger) ) {
 					$(this).removeClass('inactive');
 				}
 			});
