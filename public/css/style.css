@@ -108,7 +108,7 @@ a:hover {
 .intro {
     background: #1a1a1a;
     height: 550px;    
-    margin: 100px 0 150px 0;
+    margin: 100px 0 0 0;
     position: relative;   
 }
 
@@ -129,8 +129,7 @@ a:hover {
 
 /* ==============  Highlight   ============== */
 
-.highlights {
-    margin-bottom: 150px;
+.highlights {    
     overflow: hidden;
 } 
  
@@ -258,13 +257,73 @@ a:hover {
 
 /* ==============  Layout   ============== */
 
-.section__img {
-    float: left;
-    max-width: 330px;
-    margin: 55px 80px;
+.section {
+    padding: 150px 0;        
 }
-.section__description {
-    float: right;
+    .section:nth-child(even) {
+        background: #efefef;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+.section__intro{
+    width: 400px;
+    height: 360px;
+    position: relative;
+}
+
+.section__title,
+.section__main-icon,
+.section__left-icon,
+.section__right-icon,
+.section__bottom-icon {
+    position: absolute;
+    color: #1a1a1a;
+    transition: 0.3s all;
+}        
+
+.section__main-icon,
+.section__title {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.section__main-icon {
+    font-size: 200px;
+    top: 0;
+}
+
+.section__left-icon {
+    left: 70px;
+    bottom: 40px;
+    font-size: 25px;
+}
+
+.section__right-icon {
+    right: 50px;
+    top: 100px;
+    font-size: 20px;
+}
+
+.section__bottom-icon {
+    bottom: 0;
+    right: 24px;
+    font-size: 45px;
+}
+
+.section__title {    
+    font-size: 50px;
+    top: 190px;
+    border-bottom: 10px solid #ccc;
+}
+
+.section__title--frontend { border-color: #80ba0e; }
+.section__title--design { border-color: #ba2a0e; }
+.section__title--backend { border-color: #0e77ba; }
+
+
+.section__description {    
     width: 600px;
 }
 
