@@ -66,7 +66,7 @@ a:hover {
    Author's custom styles
    ========================================================================== */
 
-.main-content {
+.content-wrapper {
     width: 1100px;
     margin: 0 auto;    
 }
@@ -115,8 +115,7 @@ a:hover {
 .intro__img {
     position: relative;
     width: 300px;
-    margin-top: 120px;   
-    z-index: 3; 
+    margin-top: 120px;       
 }
 
 .intro__text {
@@ -260,7 +259,7 @@ a:hover {
 .section {
     padding: 150px 0;        
 }
-    .section:nth-child(even) {
+    .section:nth-child(odd) {
         background: #efefef;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
