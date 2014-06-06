@@ -333,6 +333,12 @@ a:hover {
     font-weight: normal;
 }
 
+.section__description__quote {
+    font-size: 22px;
+    margin-left: -20px;
+    font-style: italic;
+}
+
 .section__description__experience {    
     font-size: 18px;
     text-align:right;
