@@ -2,12 +2,11 @@
 $(function(){
 	
 	animateNavigation();
+	
+	skillsetChart(skillset.general);
+	changeSkillSet();
+	animateSections();
 
-	// if ($(window).width() >= 700) {
-		skillsetChart(skillset.general);
-		changeSkillSet();
-		animateSections();
-	// }
 	activateMenuToggle();
 });
 
