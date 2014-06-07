@@ -1,35 +1,42 @@
 // CV Initilization
 $(function(){
-	
 	animateNavigation();
-	
 	skillsetChart(skillset.general);
 	changeSkillSet();
-	animateSections();
-
+	scrollAnimations();
 	activateMenuToggle();
 });
 
 
-function animateSections() {
+function scrollAnimations() {
 	var sections = $('.section'),
-		positionTrigger = $(window).height()*0.6;
+		positionTrigger = $(window).height()*0.6,
+		lastOffset = 0,
+		newOffset = 0;
 
 	sections.addClass('inactive');
 
 	$(window).scroll(function(){
+		newOffset = $(window).scrollTop();
 
+		// Hide navigation
+		if (lastOffset < newOffset) {
+			$('#header').addClass('hide');
+		} else {
+			$('#header').removeClass('hide');
+		}		
+
+		lastOffset = newOffset;
+
+		// Animate sections
 		if ( sections.length ) {
 			sections.each(function(){			
-				if ( $(window).scrollTop() > ($(this).offset().top - positionTrigger) ) {
+				if ( newOffset > ($(this).offset().top - positionTrigger) ) {
 					$(this).removeClass('inactive');
 				}
 			});
 			sections = $('.inactive');			
-
-		} else {
-			$(window).off('scroll');
-		}
+		} 
 
 	})
 }

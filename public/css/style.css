@@ -78,12 +78,15 @@ a:hover {
 .header {
     min-height: 60px;    
     width: 100%;
-    top: 0;    
+    top: 0px;    
     position: fixed;    
     background: white;
     z-index: 2;
     margin: 0;
+    transition: 0.3s all;
 }
+
+    .header.hide{ top: -60px; }
 
 .header__show-menu {
     display: none;
