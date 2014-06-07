@@ -326,6 +326,27 @@ a:hover {
     width: 600px;
 }
 
+.section__description__title {
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.section__description__quote {
+    font-size: 22px;
+    margin-left: -20px;
+    font-style: italic;
+}
+
+.section__description__experience {    
+    font-size: 18px;
+    text-align:right;
+    width: 200px;
+    line-height: 42px; /*dirty baseline alignment*/
+    margin: 0;
+}
+
 .section__description,
 .section__img {
     transition: 0.6s all;
@@ -339,6 +360,29 @@ a:hover {
     margin-right: -100px;
     opacity: 0;
 }
+
+.section__tag-title{
+    font-size: 12px;
+    line-height: 120%;
+    margin: 0;
+}
+
+.section__tag {
+    margin: 0 10px 5px 0;
+    padding: 2px 5px;
+    font-size: 12px;
+    background: #80ba0e;
+    color: white;
+    border-radius: 5px;
+    display: block;
+    text-decoration: none;
+    transition: 0.3s background;
+}
+
+    .section__tag:hover{
+        color: white;
+        background: #0e77ba;
+    }
 
 /* =================== Specific sections =================================== */
 
