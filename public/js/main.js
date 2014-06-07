@@ -3,12 +3,12 @@ $(function(){
 	
 	animateNavigation();
 
-	if ($(window).width() >= 700) {
+	// if ($(window).width() >= 700) {
 		skillsetChart(skillset.general);
 		changeSkillSet();
 		animateSections();
-	}
-	
+	// }
+	activateMenuToggle();
 });
 
 
@@ -32,6 +32,18 @@ function animateSections() {
 			$(window).off('scroll');
 		}
 
+	})
+}
+
+function activateMenuToggle() {
+	var menu = $("#menu")
+
+	$('#menu-toggle').click(function (){
+		menu.toggleClass('show');
+	})
+
+	$('#menu a').click(function (){
+		menu.removeClass('show');
 	})
 }
 

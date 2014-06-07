@@ -85,6 +85,10 @@ a:hover {
     margin: 0;
 }
 
+.header__show-menu {
+    display: none;
+}
+
 .header__menu {
     position: absolute;
     right: 20px;    
@@ -221,6 +225,12 @@ a:hover {
     border: 1px solid #ccc;
     margin: 0 auto;
     display: block;
+}
+
+.skillset__header {
+    width: 90%;
+    margin: 10px auto;
+    font-weight: normal;
 }
 
 .skillset__bar {
@@ -404,17 +414,6 @@ a:hover {
 
 
 /* =================== Specific sections =================================== */
-
-.frontend,
-.design,
-.backend,
-.experience,
-.education,
-.others {
-    margin-bottom: 100px;
-}
-
-
 .experience__title {
     font-size: 2.5em;
 
@@ -555,39 +554,27 @@ a:hover {
 
     .intro__text {
         font-size: 20px;
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
     }
         
-
-    .highlight {
-        height: 230px;
-    }
-        .highlight a {display: block}
-
-
-    .section__img,
+    .section__intro,
     .section__description {
-        margin: 10px auto;
-        float: none;
-        display: block;
-    }
-
-    .section__img {
-        width: auto;
-    }
-
-    .section__description,
-    .education__sample  {
+        float: none;               
         width: 90%;
         margin: 0 auto;
     }
 
-    .experience {
-        padding-top: 120px;
-        background: url(../img/experience2.png) 50% 0 no-repeat;
-        background-size: 90%
+    .section__intro {
+        margin-top: -80px;
+        margin-bottom: 20px;
     }
-        .experience img {display: none}
+
+    .section__img {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
     
 }
 
@@ -602,29 +589,51 @@ a:hover {
     }
 
     .header {
-        padding-bottom: 10px;
+        height: 20px;
     }
+
+    .header__show-menu {
+        display: block;
+        float: right;
+        padding: 19px 10px;
+    }
+
     .header__menu {
-        margin-top: 10px;
+        top: 30px;
+        right: -300px;
+        transition: 0.3s all;
     }
 
-    .intro { 
-        background: none;
-        margin-top: 80px;
-        margin-bottom: 0;
-    }
-    
-    .intro__img { display: none }
-
-    .intro__text {
-        float:none;
-        color: #222;
-        width: 90%;
-        margin: 0 auto;
+    .header__menu.show {
+        right: 0px;
+        background: white
     }
 
-    .skillset,
-    .highlights { display: none }
+    li.header__menu__item {
+        float: none;
+        padding: 10px 0;
+    }
+
+    .header__menu__link {
+        display: block;
+        text-align: right;
+        padding: 5px 20px;
+    }
+
+    .intro,
+    .section {
+        padding: 50px 0;
+    }
+
+    .intro {
+        margin-top: 20px;
+    }
+
+    .section__intro {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }    
+
 }
 
 /* ==========================================================================

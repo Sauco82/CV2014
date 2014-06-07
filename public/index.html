@@ -13,7 +13,8 @@
     <body>
 
         <div class="header">
-            <ul class="header__menu horizontal-list">
+            <span id="menu-toggle" class="header__show-menu">menu</span>
+            <ul id="menu" class="header__menu horizontal-list">
                 <li class="header__menu__item"><a class="header__menu__link" href="#home">home</a></li>
                 <li class="header__menu__item"><a class="header__menu__link" href="#frontend">frontend</a></li>
                 <li class="header__menu__item"><a class="header__menu__link" href="#design">design</a></li>
@@ -72,7 +73,7 @@
 
         <div class="section">
             <div class="content-wrapper">
-                <h2>Skillset</h2>
+                <h2 class="skillset__header">Skillset</h2>
                 <svg id="skillset" class="skillset">
                     <text y="20" x="100%" dx="-180" id="skillset__back" class="skillset__back" style="display:none" >Back to General Overview</text>
                 </svg>
