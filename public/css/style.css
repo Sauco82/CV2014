@@ -12,6 +12,9 @@ blue: #0e77ba;
 red: #ba2a0e;
 green: #80ba0e;
 
+light green: #a5ed17
+light red:  #ed3917
+light blue:  #61baf3
 ==============================*/
 
 
@@ -107,7 +110,7 @@ a:hover {
 
 .intro {
     background: #1a1a1a;
-    height: 550px;    
+    padding: 120px 0;
     margin: 100px 0 0 0;
     position: relative;   
 }
@@ -115,14 +118,13 @@ a:hover {
 .intro__img {
     position: relative;
     width: 300px;
-    margin-top: 120px;       
 }
 
 .intro__text {
     color: white;
     width: 750px;
     font-size: 20px;
-    margin-top: 150px;
+    margin-top: 20px;
 }    
 
 
@@ -179,20 +181,20 @@ a:hover {
 }
 
 .highlight__left-icon {
-    left: 70px;
+    left: 13%;
     bottom: 40px;
     font-size: 25px;
 }
 
 .highlight__right-icon {
-    right: 50px;
-    top: 100px;
+    right: 10%;
+    top: 40%;
     font-size: 20px;
 }
 
 .highlight__bottom-icon {
     bottom: 0;
-    right: 24px;
+    right: 5%;
     font-size: 45px;
 }
 
@@ -278,7 +280,7 @@ a:hover {
 .section__bottom-icon {
     position: absolute;
     color: #1a1a1a;
-    transition: 0.3s all;
+    transition: .6s all;
 }        
 
 .section__main-icon,
@@ -309,6 +311,19 @@ a:hover {
     bottom: 0;
     right: 24px;
     font-size: 45px;
+}
+
+
+.inactive .section__main-icon {}
+
+.inactive .section__left-icon,
+.inactive .section__right-icon,
+.inactive .section__bottom-icon {
+    opacity: 0;
+    left: 50%;
+    top:50%;
+    right: 50%;
+    bottom:50%;
 }
 
 .section__title {    
@@ -352,12 +367,13 @@ a:hover {
     transition: 0.6s all;
 }
 
-.inactive .section__img {
-    margin-left: -100px;
+.inactive .section__description.right {
+    margin-right: -100px;
     opacity: 0;
 }
-.inactive .section__description {
-    margin-right: -100px;
+
+.inactive .section__description.left {
+    margin-left: -100px;
     opacity: 0;
 }
 
@@ -370,19 +386,22 @@ a:hover {
 .section__tag {
     margin: 0 10px 5px 0;
     padding: 2px 5px;
-    font-size: 12px;
-    background: #80ba0e;
+    font-size: 12px;    
     color: white;
     border-radius: 5px;
     display: block;
     text-decoration: none;
     transition: 0.3s background;
 }
+    .section__tag:hover{ color: white }
 
-    .section__tag:hover{
-        color: white;
-        background: #0e77ba;
-    }
+.section__tags--frontend .section__tag{ 
+    background: #80ba0e; 
+    text-shadow: 0px 0px 2px #394E10; 
+}
+.section__tags--design   .section__tag{ background: #ba2a0e }
+.section__tags--backend  .section__tag{ background: #0e77ba }
+
 
 /* =================== Specific sections =================================== */
 
@@ -517,29 +536,28 @@ a:hover {
         font-size: 1em; 
     }
 
-    .main-content {
+    .content-wrapper {
         width: 700px;
     }
+    
+    .header__menu__item { padding: 10px 0px 10px 25px; }
 
-    .header {
-        font-size: 0.9em;
-    }
-        .header li { padding: 5px 0 0px 10px; }
-
-    .intro {
-        height: 160px;
-    }
-
+    .intro__text,
     .intro__img {
-        width: 256px;
-        margin-top: -50px;
+        float: none;        
+    }
+
+    .intro__img {        
+        width: 200px;
+        display: block;
+        margin: 0 auto;
     }
 
     .intro__text {
-        font-size: 25px;
-        width: 400px;
+        font-size: 20px;
+        width: 100%;
     }
-        .intro__text br {display: none;}
+        
 
     .highlight {
         height: 230px;
@@ -579,7 +597,7 @@ a:hover {
     }
 
     .header,
-    .main-content {
+    .content-wrapper {
         width: 100%;
     }
 
