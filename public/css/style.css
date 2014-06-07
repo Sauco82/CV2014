@@ -269,7 +269,8 @@ a:hover {
 /* ==============  Layout   ============== */
 
 .section {
-    padding: 150px 0;        
+    padding: 150px 0; 
+    overflow: hidden;       
 }
     .section:nth-child(odd) {
         background: #efefef;
