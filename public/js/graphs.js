@@ -3,14 +3,14 @@ function changeSkillSet() {
 		var selected = $(this).attr('id');
 
 		if ( selected ) {
-			$("#skillset__back").show();
+			$(".skillset__wrapper").addClass('subskillset');
 			skillsetChart(skillset[selected]);
 		}
 	});
 
 	$("#skillset__back").on('click', function() {
 		skillsetChart(skillset.general);
-		$("#skillset__back").hide();
+		$(".skillset__wrapper").removeClass('subskillset');
 	});
 }
 

@@ -242,15 +242,22 @@ a:hover {
     transition: 0.3s fill;
 }
     .skillset__bar:hover { fill: #ba2a0e }
+    .subskillset .skillset__bar { 
+        fill: #ba2a0e;
+        cursor: auto;
+    }
 
 
 .skillset__back {
-    fill: #ba2a0e;
+    fill: #80ba0e;
     transition: 0.3s fill;
     font-size: 14px;
     cursor:pointer;
+    display: none;
 }
-    .skillset__back:hover {fill: #80ba0e;}
+    .skillset__back:hover {fill: #ba2a0e;}
+    .subskillset .skillset__back {display: block}
+    
 
 .axis text {
   font: 10px sans-serif;
